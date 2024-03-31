@@ -165,6 +165,10 @@ func Calculate(num1 string, num2 string, op string) (res int, err error) {
 		val1, _ := strconv.Atoi(num1)
 		val2, _ := strconv.Atoi(num2)
 
+		if val1 > 10 || val2 > 10 {
+			return 0, InvalidSymbol{}
+		}
+
 		//fmt.Println(val1, val2)
 		switch string(op) {
 		case "+":
